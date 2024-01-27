@@ -92,3 +92,12 @@ header .contenedor-texto-header .call-to-action:hover {
     color: #2c2c2c;
 }
 
+
+
+.typing-effect {
+    overflow: hidden; /* Evitar que el texto se muestre antes del efecto de escritura */
+    white-space: nowrap; /* Evitar saltos de línea */
+    border-right: 2px solid #000; /* Simular el cursor de escritura */
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+  }
