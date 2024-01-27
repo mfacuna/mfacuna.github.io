@@ -47,6 +47,8 @@ header .menu a:hover{
 header .contenedor-texto-header {
     margin: 100px 0;
     text-align: center;
+    width: auto;
+    justify-content:baseline;
 }
 
 header .contenedor-texto-header .titulo-header { 
@@ -60,7 +62,9 @@ span {
 }
 
 header .contenedor-texto-header .linea {
-    width: 600px;
+    width: auto;
+    max-width: 600px;
+
     margin: auto;
     height: 3px;
     background-color: #89ffff;
@@ -95,8 +99,7 @@ header .contenedor-texto-header .call-to-action:hover {
 
 
 .typing-effect {
-    overflow: hidden; /* Evitar que el texto se muestre antes del efecto de escritura */
-    white-space: nowrap; /* Evitar saltos de línea */
+    overflow: hidden; /* Evitar que el texto se muestre antes del efecto de escritura */ /* Evitar saltos de línea */
     border-right: 2px solid #000; /* Simular el cursor de escritura */
     font-size: 24px;
     font-family: 'Arial', sans-serif;
