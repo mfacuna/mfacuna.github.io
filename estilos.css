@@ -52,8 +52,8 @@ header .contenedor-texto-header {
 }
 
 header .contenedor-texto-header .titulo-header { 
+    color: #FFFFF0;
     font-size: 60px;
-    color: #fff;
     margin-bottom: 5px;
 }
 
