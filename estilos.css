@@ -2,11 +2,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 
 body {
-    font-family: 'Quicksand', sans-serif;
     font-size: 16px;
+    margin: 0;
+    padding: 0;
 }
 
 .contenedor { 
@@ -21,18 +23,32 @@ header{
     height: 650px;
     background: rgb(252,176,69);
     background: linear-gradient(90deg, rgba(252,176,69,1) 0%, rgba(253,29,29,1) 50%, rgba(66,14,101,1) 100%);
+    box-shadow: 4px 4px 2px -2px gray;
 }
 
-header .menu{
+header .menu {
     display: flex;
     justify-content: flex-end;
-    margin: 20px 0;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
     padding: 15px 20px;
+    z-index: 1000; /* Asegura que el menú esté sobre otros elementos */
+
+}
+
+.menu.scrolled {
+    color: #2c2c2c;
+    background: rgb(252,176,69);
+    background: linear-gradient(90deg, rgba(252,176,69,1) 0%, rgba(253,29,29,1) 50%, rgba(66,14,101,1) 100%);
+    width: 100%;
+    box-shadow: 0 4px 2px -2px gray;
 }
 
 header .menu a {
     display: inline-block;
-    padding: 15px 10px;
+    padding: 5px 10px;
     font-size: 18px;
     text-decoration: none;
     color: #fff;
@@ -55,7 +71,6 @@ header .contenedor-texto-header .titulo-header {
     color: #FFFFF0;
     font-size: 60px;
     margin-bottom: 5px;
-    font-family: 'Quicksand', sans-serif;
 }
 
 span {
@@ -65,7 +80,6 @@ span {
 header .contenedor-texto-header .linea {
     width: auto;
     max-width: 600px;
-
     margin: auto;
     height: 3px;
     background-color: #89ffff;
@@ -78,7 +92,7 @@ header .contenedor-texto-header .subtitulo-header {
     font-size: 20px;
     color: #fff;
     font-weight: 300;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 header .contenedor-texto-header .call-to-action { 
@@ -89,11 +103,13 @@ header .contenedor-texto-header .call-to-action {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    font-size: 20px;
 }
 
 header .contenedor-texto-header .call-to-action:hover {
     background: #ffd174;
     color: #2c2c2c;
+    font-size: 20px;
 }
 
 .acerca-de {
@@ -105,7 +121,9 @@ header .contenedor-texto-header .call-to-action:hover {
 
 .wrapper {
     margin: 150px auto;
-    width: 70%;
+    width: 90%;
+    max-width: 1000px;
+    background-color: #fff;
 }
 
 .wrapper img {
@@ -116,7 +134,7 @@ header .contenedor-texto-header .call-to-action:hover {
 }
 
 .wrapper .content {
-    font-family: 'Quicksand', sans-serif;
+
 }
 
 .wrapper .content h2 {
@@ -127,13 +145,14 @@ header .contenedor-texto-header .call-to-action:hover {
 
 .wrapper .content p {
     padding-bottom: 15px;
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.4;
+    text-align: justify;
 }
 
 .typing-effect {
     overflow: hidden; /* Evitar que el texto se muestre antes del efecto de escritura */ /* Evitar saltos de línea */
     border-right: 2px solid #000; /* Simular el cursor de escritura */
     font-size: 24px;
-    font-family: 'Arial', sans-serif;
 }
 
