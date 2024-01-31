@@ -31,6 +31,7 @@ function escribirTexto(elemento, texto, velocidad) {
 const titulo = document.getElementById("titulo-header");
 escribirTexto(titulo, "atias Acuña ", 80);
 
+
 // Selecciona el elemento que deseas modificar después de hacer scroll
 const menu = document.querySelector(".menu");
 

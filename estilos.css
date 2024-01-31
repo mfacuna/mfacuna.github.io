@@ -50,14 +50,17 @@ header .menu a {
     display: inline-block;
     padding: 5px 10px;
     font-size: 18px;
+    transition: font-size 0.3s;
     text-decoration: none;
     color: #fff;
     font-weight: lighter;
 }
 
+
 header .menu a:hover{
     text-decoration: underline;
     color: #ffd174;
+    font-size: 19px;
 }
 
 header .contenedor-texto-header {
@@ -96,6 +99,7 @@ header .contenedor-texto-header .subtitulo-header {
 }
 
 header .contenedor-texto-header .call-to-action { 
+    
     display: inline-block;
     padding: 20px 15px;
     border: 2px solid #ffd174;
@@ -103,13 +107,16 @@ header .contenedor-texto-header .call-to-action {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 18px;
+    transition: background-color 0.5s ease;
+    transition: font-size 0.5s;
 }
 
 header .contenedor-texto-header .call-to-action:hover {
     background: #ffd174;
     color: #2c2c2c;
-    font-size: 20px;
+    font-size: 19px;
+
 }
 
 .acerca-de {
@@ -122,7 +129,7 @@ header .contenedor-texto-header .call-to-action:hover {
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.acerca-de.aparecer {
+.aparecer {
     opacity: 1; /* Hacer visible */
     transform: translateY(0); /* Quitar el desplazamiento */
 }
@@ -147,10 +154,6 @@ header .contenedor-texto-header .call-to-action:hover {
     margin: 0 30px 30px;
 }
 
-.wrapper .content {
-
-}
-
 .wrapper .content h2 {
     padding-bottom: 30px;
     font-size: 40px;
@@ -170,3 +173,34 @@ header .contenedor-texto-header .call-to-action:hover {
     font-size: 24px;
 }
 
+@media screen and (max-width: 510px) {
+    .wrapper .contentImg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header .contenedor-texto-header .titulo-header { 
+        color: #FFFFF0;
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+
+    header .contenedor-texto-header .subtitulo-header {
+        width: auto;
+        justify-content:baseline;
+        font-size: 15px;
+        color: #fff;
+        font-weight: 300;
+        margin-bottom: 40px;
+    }
+
+    header .menu a {
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 13px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: lighter;
+    }
+}
