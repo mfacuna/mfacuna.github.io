@@ -32,16 +32,70 @@ const titulo = document.getElementById("titulo-header");
 escribirTexto(titulo, "atias Acuña ", 80);
 
 // Selecciona el elemento que deseas modificar después de hacer scroll
-const menu = document.querySelector('.menu');
+const menu = document.querySelector(".menu");
 
 // Función que se ejecutará cuando se haga scroll
-window.addEventListener('scroll', function() {
+window.addEventListener("scroll", function () {
+  var acercaDeSection = document.getElementById("acerca-de");
+  var acercaDePosition = acercaDeSection.offsetTop;
+  var windowHeight = window.innerHeight;
+  var scrollPosition = window.scrollY;
+
+  if (scrollPosition > acercaDePosition - windowHeight / 2) {
+    // Si el scroll está más allá del punto medio de la sección "acerca-de"
+    acercaDeSection.classList.add("aparecer");
+  }
+
   // Verifica la posición de desplazamiento (puedes ajustar el valor según tus necesidades)
   if (window.scrollY > 50) {
     // Agrega una clase cuando el scroll alcanza cierta posición
-    menu.classList.add('scrolled');
+    menu.classList.add("scrolled");
   } else {
     // Elimina la clase cuando el scroll vuelve a la posición inicial
-    menu.classList.remove('scrolled');
+    menu.classList.remove("scrolled");
   }
 });
+
+function scrollToElement(elementId) {
+  var element = document.getElementById(elementId);
+  if (element) {
+    var targetPosition = element.getBoundingClientRect().top + window.scrollY;
+    var startPosition = window.scrollY;
+    var distance = targetPosition - startPosition;
+    var startTime = null;
+    var duration = 700; // Ajusta la duración total del desplazamiento
+
+    function stepScroll(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = timestamp - startTime;
+
+      var easing = function (t) {
+        // Puedes ajustar la ecuación de easing según tus preferencias
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      };
+
+      window.scrollTo(
+        0,
+        startPosition + easing(progress / duration) * distance
+      );
+
+      if (progress < duration) {
+        requestAnimationFrame(stepScroll);
+      }
+    }
+
+    requestAnimationFrame(stepScroll);
+  }
+}
+
+function scrollToTop() {
+  // Almacenar la posición actual del scroll
+  var scrollPosition =
+    window.scrollY || window.scrollY || document.documentElement.scrollTop;
+
+  // Desplazar al tope de la página con velocidad reducida
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  // Restaurar la posición del scroll después de la transición
+  window.scrollTo(0, scrollPosition);
+}

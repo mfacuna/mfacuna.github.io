@@ -12,10 +12,10 @@
   </head>
   <body>
     <header>
-      <div class="contenedor">
+      <div id="menuContenedor" class="contenedor">
         <nav class="menu">
-          <a href="">Inicio</a>
-          <a href="">Acerca de</a>
+          <a onclick="scrollToElement('menuContenedor')" href="#menuContenedor">Inicio</a>
+          <a onclick="scrollToElement('acerca-de')" href="#acerca-de">Acerca de</a>
           <a href="">Portafolio</a>
           <a href="">Contacto</a>
         </nav>
@@ -29,9 +29,12 @@
         <a class="call-to-action" href="">Contáctame ahora</a>
       </div>
     </header>
-    <div class="acerca-de">
+    <div id="acerca-de" class="acerca-de">
       <div class="wrapper">
-          <img src="img/mi-foto.jpg" alt="matias-acuña" />
+          <div class="contentImg">
+            <img src="img/mi-foto.jpg" alt="matias-acuña" />
+          </div>
+          
           <div class="content">
             <h2>¡Hola! soy Matias</h2>
             <p>
