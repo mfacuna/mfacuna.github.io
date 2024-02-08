@@ -47,6 +47,8 @@ window.addEventListener("scroll", function () {
     acercaDeSection.classList.add("aparecer");
   }
 
+  
+
   // Verifica la posición de desplazamiento (puedes ajustar el valor según tus necesidades)
   if (window.scrollY > 50) {
     // Agrega una clase cuando el scroll alcanza cierta posición
@@ -54,6 +56,34 @@ window.addEventListener("scroll", function () {
   } else {
     // Elimina la clase cuando el scroll vuelve a la posición inicial
     menu.classList.remove("scrolled");
+  }
+});
+
+// Obtén el elemento por su ID
+var miElemento = document.getElementById("portafolio");
+
+// Verifica la posición del scroll al hacer scroll
+window.addEventListener("scroll", function() {
+  // Obtiene la posición actual del scroll
+  var scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
+
+  // Obtiene la altura de la ventana
+  var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+  // Calcula la mitad de la altura de la ventana
+  var mitadVentana = windowHeight / 2;
+
+  // Obtiene la posición superior e inferior del elemento
+  var elementoPosSuperior = miElemento.offsetTop;
+  var elementoPosInferior = elementoPosSuperior + miElemento.offsetHeight;
+
+  // Verifica si el elemento está en la mitad de la ventana
+  if (scrollPos + mitadVentana >= elementoPosSuperior && scrollPos + mitadVentana <= elementoPosInferior) {
+      console.log("El elemento está en la mitad de la ventana");
+      miElemento.classList.add("aparecer");
+
+  } else {
+      console.log("El elemento no está en la mitad de la ventana");
   }
 });
 
