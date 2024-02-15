@@ -278,13 +278,35 @@ i {
     height: auto;
 }
 
+
+.contacto {
+    opacity: 0;
+    /* Inicialmente oculto */
+    transform: translateY(20px);
+    /* Agregamos un pequeño desplazamiento para animación */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex; /* Alineación vertical con display flex */
+    flex-direction: column; /* Los elementos se apilan verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+}
+
+.contactForm {
+    display: flex; /* Alineación vertical con display flex */
+    flex-direction: column; /* Los elementos se apilan verticalmente */
+    text-align: center;
+    width: 400px;
+    align-items: center;
+}
+
 .aparecer {
     opacity: 1;
     /* Hacer visible */
     transform: translateY(0);
     /* Quitar el desplazamiento */
 }
-
 
 .typing-effect {
     overflow: hidden;

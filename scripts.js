@@ -47,8 +47,6 @@ window.addEventListener("scroll", function () {
     acercaDeSection.classList.add("aparecer");
   }
 
-  
-
   // Verifica la posición de desplazamiento (puedes ajustar el valor según tus necesidades)
   if (window.scrollY > 50) {
     // Agrega una clase cuando el scroll alcanza cierta posición
@@ -59,11 +57,10 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Obtén el elemento por su ID
-var miElemento = document.getElementById("portafolio");
-
-// Verifica la posición del scroll al hacer scroll
+// Verifica la posición del scroll al hacer scroll a portafolio
 window.addEventListener("scroll", function() {
+  // Obtén el elemento por su ID
+  let portafolio = document.getElementById("portafolio");
   // Obtiene la posición actual del scroll
   var scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
 
@@ -74,16 +71,24 @@ window.addEventListener("scroll", function() {
   var mitadVentana = windowHeight / 2;
 
   // Obtiene la posición superior e inferior del elemento
-  var elementoPosSuperior = miElemento.offsetTop;
-  var elementoPosInferior = elementoPosSuperior + miElemento.offsetHeight;
+  var elementoPosSuperior = portafolio.offsetTop;
+  var elementoPosInferior = elementoPosSuperior + portafolio.offsetHeight;
 
   // Verifica si el elemento está en la mitad de la ventana
   if (scrollPos + mitadVentana >= elementoPosSuperior && scrollPos + mitadVentana <= elementoPosInferior) {
-      console.log("El elemento está en la mitad de la ventana");
-      miElemento.classList.add("aparecer");
+      //console.log("El elemento está en la mitad de la ventana");
+      portafolio.classList.add("aparecer");
 
   } else {
-      console.log("El elemento no está en la mitad de la ventana");
+      //console.log("El elemento no está en la mitad de la ventana");
+  }
+});
+
+// Verifica la posición del scroll al hacer scroll hasta el final para contacto.
+window.addEventListener("scroll", function() {
+  let contacto = document.getElementById("contacto");
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    contacto.classList.add("aparecer");
   }
 });
 
