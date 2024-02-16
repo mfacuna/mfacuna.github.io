@@ -31,7 +31,6 @@ function escribirTexto(elemento, texto, velocidad) {
 const titulo = document.getElementById("titulo-header");
 escribirTexto(titulo, "atias Acuña ", 80);
 
-
 // Selecciona el elemento que deseas modificar después de hacer scroll
 const menu = document.querySelector(".menu");
 
@@ -39,14 +38,29 @@ const menu = document.querySelector(".menu");
 window.addEventListener("scroll", function () {
   var acercaDeSection = document.getElementById("acerca-de");
   var acercaDePosition = acercaDeSection.offsetTop;
+
+  var portafolioSection = document.getElementById("contenidoPortafolio");
+  var portafolioPosition = portafolioSection.offsetTop;
+
+  var contactoSection = this.document.getElementById("contacto");
+  var contactoPosition = contactoSection.offsetTop;
+
   var windowHeight = window.innerHeight;
   var scrollPosition = window.scrollY;
 
-  if (scrollPosition > acercaDePosition - windowHeight / 2) {
+  if (scrollPosition > acercaDePosition - (windowHeight - 100)) {
     // Si el scroll está más allá del punto medio de la sección "acerca-de"
     acercaDeSection.classList.add("aparecer");
   }
 
+  if(scrollPosition > portafolioPosition - (windowHeight - 100)){
+    portafolioSection.classList.add("aparecer");
+  }
+
+  if(scrollPosition > contactoPosition - (windowHeight - 100)){
+    contactoSection.classList.add("aparecer");
+  }
+  
   // Verifica la posición de desplazamiento (puedes ajustar el valor según tus necesidades)
   if (window.scrollY > 50) {
     // Agrega una clase cuando el scroll alcanza cierta posición
@@ -54,41 +68,6 @@ window.addEventListener("scroll", function () {
   } else {
     // Elimina la clase cuando el scroll vuelve a la posición inicial
     menu.classList.remove("scrolled");
-  }
-});
-
-// Verifica la posición del scroll al hacer scroll a portafolio
-window.addEventListener("scroll", function() {
-  // Obtén el elemento por su ID
-  let portafolio = document.getElementById("contenidoPortafolio");
-  // Obtiene la posición actual del scroll
-  var scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
-
-  // Obtiene la altura de la ventana
-  var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-  // Calcula la mitad de la altura de la ventana
-  var mitadVentana = windowHeight / 2;
-
-  // Obtiene la posición superior e inferior del elemento
-  var elementoPosSuperior = portafolio.offsetTop;
-  var elementoPosInferior = elementoPosSuperior + portafolio.offsetHeight;
-
-  // Verifica si el elemento está en la mitad de la ventana
-  if (scrollPos + mitadVentana >= elementoPosSuperior && scrollPos + mitadVentana <= elementoPosInferior) {
-      //console.log("El elemento está en la mitad de la ventana");
-      portafolio.classList.add("aparecer");
-
-  } else {
-      //console.log("El elemento no está en la mitad de la ventana");
-  }
-});
-
-// Verifica la posición del scroll al hacer scroll hasta el final para contacto.
-window.addEventListener("scroll", function() {
-  let contacto = document.getElementById("contacto");
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-    contacto.classList.add("aparecer");
   }
 });
 
