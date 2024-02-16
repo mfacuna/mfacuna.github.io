@@ -63,7 +63,7 @@ header .menu {
     padding: 5px 5px;
 }
 
-a {
+.menu a {
     color: var(--color-primario-1);
     display: inline-block;
     padding: 5px 10px;
@@ -75,7 +75,7 @@ a {
 }
 
 
-a:hover {
+.menu a:hover {
     color: var(--color-primario-2);
     text-decoration: underline;
     font-size: 19px;
@@ -153,7 +153,7 @@ header .contenedor-texto-header .call-to-action:hover {
 }
 
 .wrapper {
-    margin: 150px auto;
+    margin: 70px auto;
     width: 90%;
     max-width: 1000px;
 }
@@ -175,6 +175,23 @@ h2 {
     font-family: 'Changa', sans-serif;
     font-size: 40px;
     color: #febe3e;
+    text-shadow: -2px 2px 3px #000;
+}
+
+.fa-node-js:hover {
+    color: green;
+}
+
+.fa-react:hover {
+    color: blue;
+}
+
+.fa-html5:hover {
+    color: red;
+}
+
+.fa-css3:hover {
+    color: #3A98B9;
 }
 
 .wrapper .content p {
@@ -214,18 +231,25 @@ i {
     padding: 30px;
 }
 
+i span {
+    color: #000;
+}
+
 .portafolio {
-    opacity: 0;
-    /* Inicialmente oculto */
-    transform: translateY(20px);
-    /* Agregamos un pequeño desplazamiento para animación */
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     margin-bottom: 0;
     background-color: #fff;
     text-align: center;
     background-image: radial-gradient(var(--color-secundario-2) 0.5px, #313131 0.5px);
     background-size: 10px 10px;
-    padding-top: 100px;
+    padding-top: 70px;
+}
+
+.contenidoPortafolio {
+    opacity: 0;
+    /* Inicialmente oculto */
+    transform: translateY(20px);
+    /* Agregamos un pequeño desplazamiento para animación */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .container {
@@ -280,25 +304,132 @@ i {
 
 
 .contacto {
+    height: 600px;
     opacity: 0;
     /* Inicialmente oculto */
     transform: translateY(20px);
     /* Agregamos un pequeño desplazamiento para animación */
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    margin-top: 30px;
-    margin-bottom: 30px;
     text-align: center;
-    display: flex; /* Alineación vertical con display flex */
-    flex-direction: column; /* Los elementos se apilan verticalmente */
-    align-items: center; /* Centra los elementos horizontalmente */
+    background-image: url("img/fondocontacto.jpg");
+    background-size:cover;
+}
+
+.contact-conteiner {
+    display: grid;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 400px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 15px;
+}
+
+.links {
+    width: 100%;
+    border: 0px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: var(--color-primario-1);
+    border-radius: 10px;
+    padding: 45px;
+    justify-content: center;
+    align-items: center;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: var(--color-primario-1);
+    text-align: left;
+}
+
+.links a i {
+    padding: 0 10px 0 0;
+    text-align: left;
+}
+
+.links a span {
+    text-align: left;
+    margin-left: 0px;
+    color: #000;
+}
+.contact-data {
+    width: 100%;
+    border: 0px solid #000;
+    min-height: 100px; /* Cambiado de height a min-height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contactForm {
+    width: 80%;
     display: flex; /* Alineación vertical con display flex */
     flex-direction: column; /* Los elementos se apilan verticalmente */
+    padding: 15px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: var(--color-primario-1);
+    border-radius: 10px;
+}
+
+.contactForm label {
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+.contacto span {
+    font-size: 25px;
+    width: 100px;
+    display: block;
+    margin: 0 auto; /* Centrar el texto dentro del contenedor */
+    padding: 5px 0; /* Puedes ajustar el espacio interno del contenedor */
+}
+
+.contactForm button {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border: 2px solid var(--color-primario-1);
     text-align: center;
-    width: 400px;
+    color: var(--color-primario-1);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.5s ease;
+    transition: font-size 0.5s;
+}
+
+.contactForm button:hover {
+    background: var(--color-primario-1);
+    color: #fbfbfb;
+    text-shadow: -1px 1px 1px #000;
+}
+
+
+.contactForm input {
+    padding: 5px;
+}
+
+.liks a {
+    display:flex;
+    justify-content: center;
     align-items: center;
+    text-align: right;
 }
 
 .aparecer {
@@ -324,6 +455,10 @@ i {
         align-items: center;
     }
 
+    .wrapper .contentImg img {
+        max-width: 120px;
+    }
+
     header .contenedor-texto-header .titulo-header {
         color: var(--color-primario-1);
         font-size: 35px;
@@ -345,7 +480,14 @@ i {
         padding: 5px 10px;
         font-size: 13px;
         text-decoration: none;
-        color: #000;
         font-weight: lighter;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .contactForm {
+        width: 90%;
     }
 }

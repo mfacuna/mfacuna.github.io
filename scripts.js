@@ -60,7 +60,7 @@ window.addEventListener("scroll", function () {
 // Verifica la posición del scroll al hacer scroll a portafolio
 window.addEventListener("scroll", function() {
   // Obtén el elemento por su ID
-  let portafolio = document.getElementById("portafolio");
+  let portafolio = document.getElementById("contenidoPortafolio");
   // Obtiene la posición actual del scroll
   var scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
 
