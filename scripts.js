@@ -39,8 +39,8 @@ window.addEventListener("scroll", function () {
   var acercaDeSection = document.getElementById("acerca-de");
   var acercaDePosition = acercaDeSection.offsetTop;
 
-  var portafolioSection = document.getElementById("contenidoPortafolio");
-  var portafolioPosition = portafolioSection.offsetTop;
+  //var portafolioSection = document.getElementById("contenidoPortafolio");
+  //var portafolioPosition = portafolioSection.offsetTop;
 
   var contactoSection = this.document.getElementById("contacto");
   var contactoPosition = contactoSection.offsetTop;
@@ -53,9 +53,9 @@ window.addEventListener("scroll", function () {
     acercaDeSection.classList.add("aparecer");
   }
 
-  if(scrollPosition > portafolioPosition - (windowHeight - 100)){
-    portafolioSection.classList.add("aparecer");
-  }
+  //if(scrollPosition > portafolioPosition - (windowHeight - 100)){
+    //portafolioSection.classList.add("aparecer");
+  //}
 
   if(scrollPosition > contactoPosition - (windowHeight - 100)){
     contactoSection.classList.add("aparecer");
